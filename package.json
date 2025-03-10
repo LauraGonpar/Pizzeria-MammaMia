@@ -1,16 +1,13 @@
 {
   "name": "pizzeria-mammamia",
   "private": true,
-  "homepage": "https://LauraGonpar.github.io/Pizzeria-MammaMia",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predploy": "npm run build",
-    "deploy": "gh-pages -d index.html"
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^19.0.0",
