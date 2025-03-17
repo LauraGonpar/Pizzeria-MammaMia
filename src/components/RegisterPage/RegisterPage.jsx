@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./RegisterPage.css";
+import Swal from "sweetalert2";
 
 const RegisterPage = () => {
   const [correo, setCorreo] = useState("");
@@ -21,13 +22,26 @@ const RegisterPage = () => {
       contraseña.trim() === "" ||
       confirmarContraseña.trim() === ""
     ) {
-      alert("Por favor, llena todos los campos");
+      Swal.fire({
+        title: "Por favor, llena todos los campos",
+      });
     } else if (contraseña.length < 6) {
-      alert("La contraseña debe tener al menos 6 caracteres");
+      Swal.fire({
+        title: "La contraseña debe tener al menos 6 caracteres",
+      });
     } else if (contraseña === confirmarContraseña) {
-      alert("Registro exitoso");
+      Swal.fire({
+        title: "Registro exitoso",
+        icon: "success",
+        draggable: true,
+        timer: 1500,
+      });
     } else {
-      alert("Las contraseñas no coinciden");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Las contraseñas no coinciden",
+      });
     }
   };
 

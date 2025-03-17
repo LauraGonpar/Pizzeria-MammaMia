@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./LoginPage.css";
+import Swal from "sweetalert2";
 
 const LoginPage = () => {
   const [correo, setCorreo] = useState("");
@@ -15,15 +16,27 @@ const LoginPage = () => {
     setError(false);
   };
   const handleEnviar = () => {
-    // console.log(correo, contraseña, confirmarContraseña);
     if (correo.trim() === "" || contraseña.trim() === "") {
-      alert("Por favor, llena todos los campos");
+      Swal.fire({
+        title: "Por favor, llena todos los campos",
+      });
     } else if (contraseña.length < 6) {
-      alert("La contraseña debe tener al menos 6 caracteres");
+      Swal.fire({
+        title: "La contraseña debe tener al menos 6 caracteres",
+      });
     } else if (contraseña === "123456") {
-      alert("Login exitoso");
+      Swal.fire({
+        title: "Contraseña correcta",
+        icon: "success",
+        draggable: true,
+        timer: 1500,
+      });
     } else {
-      alert("Login incorrecto");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Contraseña incorrecta",
+      });
     }
   };
 
