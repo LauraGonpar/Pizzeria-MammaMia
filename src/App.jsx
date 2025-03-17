@@ -8,8 +8,8 @@ const App = () => {
     <>
       <Navbar />
       {/* <Home /> */}
-      <RegisterPage />
-      {/* <LoginPage /> */}
+      {/* <RegisterPage /> */}
+      <LoginPage />
       <Footer />
     </>
   );
